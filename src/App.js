@@ -11,6 +11,13 @@ const images = [
 ];
 
 const App = () => {
+  const btnStyle = {
+    height: '30px',
+    width: '65px',
+    borderRadius: '5px',
+    margin: '5px'
+  };
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevImg = () => {
@@ -27,8 +34,12 @@ const App = () => {
     <div className="App">
       <h1>Image Carousel</h1>
       <Carousel images={images} currentIndex={currentIndex}>
-        <button onClick={prevImg}>Previous</button>
-        <button onClick={nextImg}>Next</button>
+        <button style={btnStyle} onClick={prevImg}>
+          Previous
+        </button>
+        <button style={btnStyle} onClick={nextImg}>
+          Next
+        </button>
       </Carousel>
     </div>
   );
